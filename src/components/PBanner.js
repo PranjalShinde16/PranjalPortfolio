@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import headerImg from "../assets/img/header-img.svg";
 import { ArrowRightCircle } from 'react-bootstrap-icons';
@@ -13,10 +13,13 @@ export const PBanner = () => {
   const toRotate = ["Hi! I am Pranjal"];
   const period = 2000;
 
-  const tick = () => {
+  // Memoizing the tick function
+  const tick = useCallback(() => {
     let i = loopNum % toRotate.length;
     let fullText = toRotate[i];
-    let updatedText = isDeleting ? fullText.substring(0, text.length - 1) : fullText.substring(0, text.length + 1);
+    let updatedText = isDeleting 
+      ? fullText.substring(0, text.length - 1) 
+      : fullText.substring(0, text.length + 1);
 
     setText(updatedText);
 
@@ -26,13 +29,13 @@ export const PBanner = () => {
 
     if (!isDeleting && updatedText === fullText) {
       setIsDeleting(true);
-      setLoopNum(loopNum + 1); // Moved increment here to fix loopNum increment issue
+      setLoopNum(loopNum + 1); // Increment loopNum here
       setDelta(period);
     } else if (isDeleting && updatedText === '') {
       setIsDeleting(false);
       setDelta(500);
     }
-  };
+  }, [loopNum, isDeleting, text]);
 
   useEffect(() => {
     const ticker = setInterval(() => {
@@ -42,7 +45,7 @@ export const PBanner = () => {
     return () => {
       clearInterval(ticker);
     };
-  }, [delta, loopNum, isDeleting, tick]); // Added dependencies here
+  }, [delta, tick]); // Using tick in dependencies
 
   return (
     <section className="banner" id="home">
@@ -73,4 +76,4 @@ export const PBanner = () => {
       </Container>
     </section>
   );
-}
+};
