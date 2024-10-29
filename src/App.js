@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {MainPage} from './components/MainPage';
-import {JayeshPortfolio} from './components/JayeshPortfolio';
 import {PranjalPortfolio} from './components/PranjalPortfolio';
 
 function App() {
@@ -11,7 +10,6 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainPage />} />
-        <Route path="/investInHim" element={<JayeshPortfolio />} />
         <Route path="/investInHer" element={<PranjalPortfolio />} />
       </Routes>
     </BrowserRouter>
