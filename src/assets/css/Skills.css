@@ -1,51 +1,87 @@
 .skill-bx {
-    text-align: center;
-  }
-  
+  text-align: center;
+  padding: 2rem;
+}
+
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 0 2rem; /* Reduced margin for better scaling on small screens */
+}
+
+.skill-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Reduced gap for small screens */
+}
+
+.skill-name {
+  width: 30%; /* Start with more width, adjust based on screen size */
+  text-align: left;
+  color: #B8B8B8;
+  letter-spacing: 0.8px;
+  font-size: 1rem; /* Base font size */
+}
+
+.progress-bar {
+  width: 70%;
+  background-color: #B8B8B8; /* Light grey for unfilled portion */
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.filled-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 15px;
+  color: white;
+  font-weight: bold;
+  padding-right: 0.5rem;
+  border-radius: 20px;
+  transition: width 0.5s ease;
+}
+
+.percentage {
+  margin-left: 0.5rem;
+  font-size: 0.9rem;
+  color: #d7d6d6;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
   .skills-container {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    margin: 0 5rem 0 5rem;
+    margin: 0 1rem; /* Reduced margin for tablet screens */
   }
-  
+
   .skill-bar {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start;
   }
-  
+
   .skill-name {
-    width: 20%;
-    text-align: left;
-    color: #B8B8B8;
-    letter-spacing: 0.8px;
+    width: 100%; /* Full width for easier stacking */
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
   }
-  
+
   .progress-bar {
-    width: 80%;
-    background-color: #B8B8B8; /* Light grey for unfilled portion */
-    border-radius: 20px;
-    overflow: hidden;
-    position: relative;
+    width: 100%; /* Full width on smaller screens */
   }
-  
-  .filled-bar {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    height: 15px;
-    color: white;
-    font-weight: bold;
-    padding-right: 0.5rem;
-    border-radius: 20px;
-    transition: width 0.5s ease;
+}
+
+@media (max-width: 480px) {
+  .skill-bx {
+    padding: 1rem; /* Smaller padding for mobile */
   }
-  
-  
+
+  .skill-name {
+    font-size: 0.8rem; /* Smaller font size for mobile screens */
+  }
+
   .percentage {
-    margin-left: 0.5rem;
-    font-size: small;
-    color: #d7d6d6;
+    font-size: 0.8rem;
   }
-  
+}
