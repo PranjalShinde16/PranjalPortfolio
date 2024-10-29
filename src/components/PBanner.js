@@ -35,7 +35,7 @@ export const PBanner = () => {
       setIsDeleting(false);
       setDelta(500);
     }
-  }, [loopNum, isDeleting, text]);
+  }, [loopNum, isDeleting, text, toRotate]); // Added toRotate as a dependency
 
   useEffect(() => {
     const ticker = setInterval(() => {
