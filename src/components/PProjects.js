@@ -40,19 +40,17 @@ export const PProjects = () => {
   const projects2 = [
     {
       title: "Ecommerce Site",
-      description: "Collaborative:Website Design & Development",
+      description: "Collaborative: Website Design & Development",
       imgUrl: projImg4,
       link: "https://gitlab.com/jp2720728/React-based-complete-application",
       codelink: "https://gitlab.com/jp2720728/React-based-complete-application",
     },
-
     {
-      title: "Designing Porfolio",
+      title: "Designing Portfolio",
       description: "Must View Graphic Design Portfolio",
       imgUrl: projImg6,
       link: "https://drive.google.com/file/d/1WkAhXYPW3d_afCnsYqh-8z9RfmZ_u8pB/view?usp=sharing",
-      codelink:
-        "https://drive.google.com/file/d/1WkAhXYPW3d_afCnsYqh-8z9RfmZ_u8pB/view?usp=sharing",
+      codelink: "https://drive.google.com/file/d/1WkAhXYPW3d_afCnsYqh-8z9RfmZ_u8pB/view?usp=sharing",
     },
     {
       title: "Car Price Prediction Model",
@@ -69,8 +67,7 @@ export const PProjects = () => {
       description: "Creating product ideation",
       imgUrl: projImg5,
       link: "https://drive.google.com/file/d/1DET1VqJ01XuYdWln0nhtMav6fRYKyxa6/view?usp=drive_link",
-      codelink:
-        "https://drive.google.com/file/d/1DET1VqJ01XuYdWln0nhtMav6fRYKyxa6/view?usp=drive_link",
+      codelink: "https://drive.google.com/file/d/1DET1VqJ01XuYdWln0nhtMav6fRYKyxa6/view?usp=drive_link",
     },
   ];
 
@@ -81,22 +78,13 @@ export const PProjects = () => {
           <Col size={12}>
             <TrackVisibility>
               {({ isVisible }) => (
-                <div
-                  className={
-                    isVisible ? "animate__animated animate__fadeIn" : ""
-                  }
-                >
+                <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                   <h2>Projects</h2>
                   <p style={{ marginBottom: "40px" }}>
-                    Presenting a range of projects that transform ideas into
-                    engaging solutions
+                    Presenting a range of projects that transform ideas into engaging solutions
                   </p>
                   <Tab.Container id="projects-tabs" defaultActiveKey="first">
-                    <Nav
-                      variant="pills"
-                      className="nav-pills mb-5 justify-content-center align-items-center"
-                      id="pills-tab"
-                    >
+                    <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                       <Nav.Item>
                         <Nav.Link eventKey="first">Tab 1</Nav.Link>
                       </Nav.Item>
@@ -107,31 +95,26 @@ export const PProjects = () => {
                         <Nav.Link eventKey="third">Tab 3</Nav.Link>
                       </Nav.Item>
                     </Nav>
-                    <Tab.Content
-                      id="slideInUp"
-                      className={
-                        isVisible ? "animate__animated animate__slideInUp" : ""
-                      }
-                    >
+                    <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
                       <Tab.Pane eventKey="first">
                         <Row>
-                          {projects1.map((project, index) => {
-                            return <ProjectCard key={index} {...project} />;
-                          })}
+                          {projects1.map((project, index) => (
+                            <ProjectCard key={index} {...project} />
+                          ))}
                         </Row>
                       </Tab.Pane>
                       <Tab.Pane eventKey="second">
                         <Row>
-                          {projects2.map((project, index) => {
-                            return <ProjectCard key={index} {...project} />;
-                          })}
+                          {projects2.map((project, index) => (
+                            <ProjectCard key={index} {...project} />
+                          ))}
                         </Row>
                       </Tab.Pane>
                       <Tab.Pane eventKey="third">
                         <Row>
-                          {projects3.map((project, index) => {
-                            return <ProjectCard key={index} {...project} />;
-                          })}
+                          {projects3.map((project, index) => (
+                            <ProjectCard key={index} {...project} />
+                          ))}
                         </Row>
                       </Tab.Pane>
                     </Tab.Content>
@@ -142,7 +125,7 @@ export const PProjects = () => {
           </Col>
         </Row>
       </Container>
-      <img className="background-image-right" src={colorSharp2}></img>
+      <img className="background-image-right" src={colorSharp2} alt="Background design" />
     </section>
   );
 };
