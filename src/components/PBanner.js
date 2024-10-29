@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import headerImg from "../assets/img/header-img.svg";
 import { ArrowRightCircle } from 'react-bootstrap-icons';
@@ -10,8 +10,10 @@ export const PBanner = () => {
   const [isDeleting, setIsDeleting] = useState(false);
   const [text, setText] = useState('');
   const [delta, setDelta] = useState(300 - Math.random() * 100);
-  const toRotate = ["Hi! I am Pranjal"];
   const period = 2000;
+
+  // Using useMemo to memoize toRotate
+  const toRotate = useMemo(() => ["Hi! I am Pranjal"], []);
 
   // Memoizing the tick function
   const tick = useCallback(() => {
@@ -35,7 +37,7 @@ export const PBanner = () => {
       setIsDeleting(false);
       setDelta(500);
     }
-  }, [loopNum, isDeleting, text, toRotate]); // Added toRotate as a dependency
+  }, [loopNum, isDeleting, text, toRotate]); // No change needed here
 
   useEffect(() => {
     const ticker = setInterval(() => {
